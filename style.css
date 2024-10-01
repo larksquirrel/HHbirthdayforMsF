@@ -1,0 +1,153 @@
+﻿/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+h1, p {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login-container, .mode-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+    .cell[data-pos="27"] {
+        background-color: #ff0; /* 终点 */
+    }
+
+.controls {
+    margin-top: 20px;
+}
+
+.status {
+    margin-top: 10px;
+}
+
+.active {
+    font-weight: bold;
+    color: black;
+}
+
+.cell.p1 {
+    background-color: pink;
+}
+
+.cell.p2 {
+    background-color: black;
+    color: #fff;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.square {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    border: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+    .square:nth-child(odd) {
+        background-color: #ccc;
+    }
+
+    .square:nth-child(even) {
+        background-color: #eee;
+    }
+
+.player-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#game {
+    margin: 20px auto;
+    width: 600px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    width: 100%;
+    height: 500px; /* 调整为合适的高度 */
+    background-color: #eee;
+    position: relative;
+}
+
+.square {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.home1 {
+    background-color: lightblue;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+}
+
+.home2 {
+    background-color: lightcoral;
+    grid-column: 9 / 12;
+    grid-row: 9 / 12;
+}
+
+.path {
+    background-color: #ddd;
+}

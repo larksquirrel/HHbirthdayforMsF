@@ -1,0 +1,324 @@
+@font-face {
+    font-family: 'fz';
+    src: url('fz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #BA2D3E;
+    font-family: 'fz', sans-serif;
+    margin: 0;
+}
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('bg1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(3px); /* 添加模糊效果 */
+        z-index: -1; /* 确保背景图片在内容后面 */
+    }
+
+.game-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* 控制棋盘和玩家信息区域之间的间距 */
+}
+
+.player-info {
+    position: absolute;
+    top: 50px;
+    left: 750px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.controls {
+    position: absolute;
+    top: 50px;
+    left: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: #333333;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 控制头像和名字之间的间距 */
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid transparent; /* Default border color (transparent) */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+    .avatar.active-player1 {
+        border-color: black; /* Black border for Player 1 */
+    }
+
+    .avatar.active-player2 {
+        border-color: pink; /* Pink border for Player 2 */
+    }
+
+.position {
+    font-size: 18px;
+    color: #333;
+}
+
+.current-text {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: #333333;
+}
+
+button {
+    margin-top: 50px;
+    margin-left: 80px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px 20px;
+    background-color: #591A15;
+    color: #FBEBD1;
+    border: none;
+    font-family: 'fz', sans-serif;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+    button:hover {
+        background-color: #591A15;
+        opacity: 1;
+    }
+
+
+#board {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(9, 50px); /* 9列，每列50px宽 */
+    grid-template-rows: repeat(10, 50px); /* 10行，每行50px高 */
+    gap: 5px;
+    width: 605px; /* 根据列数和格子宽度计算 */
+    height: 550px; /* 根据行数和格子高度计算 */
+    margin: 20px auto;
+    border: 5px solid #333; /* 边框宽度设置为3px，颜色为#333 */
+    padding: 30px; /* 内边距，设置为50px，确保格子和边框之间有50px的距离 */
+    box-sizing: border-box; /* 包括边框和内边距在宽度和高度内 */
+    border-radius: 5%; /* 圆角矩形 */
+    background-color: #FBEBD1;
+    background-color: rgba(251, 235, 209, 0.2); /* 使用rgba设置背景颜色的透明度 */
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    position: relative;
+    width: 50px; /* 格子宽度 */
+    height: 50px; /* 格子高度 */
+    border-radius: 15%; /* 圆角矩形 */
+    background-color: #EDA668;
+    color: #dbc7a2;
+    opacity: 0.75;
+}
+
+    .cell:nth-child(1),
+    .cell:nth-child(55) {
+        background-color: #642311;
+        color: #EDA668;
+        border-radius: 50%; /* 圆角矩形 */
+        opacity: 1;
+    }
+
+    .cell:nth-child(11) {
+        grid-area: 2 / 10 / 3 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(12) {
+        grid-area: 3 / 10 / 4 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(13) {
+        grid-area: 4 / 10 / 5 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(14) {
+        grid-area: 5 / 10 / 6 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(15) {
+        grid-area: 6 / 10 / 7 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(16) {
+        grid-area: 7 / 10 / 8 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(17) {
+        grid-area: 8 / 10 / 9 / 11; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(18) {
+        grid-area: 9 / 10 / 10 / 11; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(19) {
+        grid-area: 9 / 9 / 10 / 10; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(20) {
+        grid-area: 9 / 8 / 10 / 9; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(21) {
+        grid-area: 9 / 7 / 10 / 8; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(22) {
+        grid-area: 9 / 6 / 10 / 7; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(23) {
+        grid-area: 9 / 5 / 10 / 6; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(24) {
+        grid-area: 9 / 4 / 10 / 5; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(25) {
+        grid-area: 9 / 3 / 10 / 4; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(26) {
+        grid-area: 9 / 2 / 10 / 3; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(27) {
+        grid-area: 9 / 1 / 10 / 2; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(28) {
+        grid-area: 8 / 1 / 9 / 2; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(29) {
+        grid-area: 7 / 1 / 8 / 2; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(30) {
+        grid-area: 6 / 1 / 7 / 2; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(31) {
+        grid-area: 5 / 1 / 6 / 2; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(32) {
+        grid-area: 4 / 1 / 5 / 2; /* 更改为所需的网格位置 */
+    }
+    .cell:nth-child(33) {
+        grid-area: 3 / 1 / 4 / 2; /* 更改为所需的网格位置 */
+    }
+
+
+    .cell:nth-child(34) {
+        grid-area: 3 / 2 / 4 / 3; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(35) {
+        grid-area: 3 / 3 / 4 / 4; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(36) {
+        grid-area: 3 / 4 / 4 / 5; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(37) {
+        grid-area: 3 / 5 / 4 / 6; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(38) {
+        grid-area: 3 / 6 / 4 / 7; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(39) {
+        grid-area: 3 / 7 / 4 / 8; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(40) {
+        grid-area: 3 / 8 / 4 / 9; /* 更改为所需的网格位置 */
+    }
+
+
+    .cell:nth-child(41) {
+        grid-area: 4 / 8 / 5 / 9; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(42) {
+        grid-area: 5 / 8 / 6 / 9; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(43) {
+        grid-area: 6 / 8 / 7 / 9; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(44) {
+        grid-area: 7 / 8 / 8 / 9; /* 更改为所需的网格位置 */
+    }
+
+
+    .cell:nth-child(45) {
+        grid-area: 7 / 7 / 8 / 8; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(46) {
+        grid-area: 7 / 6 / 8 / 7; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(47) {
+        grid-area: 7 / 5 / 8 / 6; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(48) {
+        grid-area: 7 / 4 / 8 / 5; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(49) {
+        grid-area: 7 / 3 / 8 / 4; /* 更改为所需的网格位置 */
+    }
+
+
+    .cell:nth-child(50) {
+        grid-area: 6 / 3 / 7 / 4; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(51) {
+        grid-area: 5 / 3/ 6 / 4; /* 更改为所需的网格位置 */
+    }
+
+
+    .cell:nth-child(52) {
+        grid-area: 5 / 4 / 6 / 5; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(53) {
+        grid-area: 5 / 5 / 6 / 6; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(54) {
+        grid-area: 5 / 6 / 6 / 7; /* 更改为所需的网格位置 */
+    }
+
+    .cell:nth-child(55) {
+        grid-area: 6 / 6 / 7 / 7; /* 更改为所需的网格位置 */
+    }
+
+
+

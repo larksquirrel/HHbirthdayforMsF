@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'fz';
+    src: url('fz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'fz', sans-serif;
+}
+
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('bg1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(3px); /* 添加模糊效果 */
+        z-index: -1; /* 确保背景图片在内容后面 */
+    }
+
+.mode-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1, p {
+    margin-top: 20px;
+}
+
+
+button {
+    margin-right: 60px;
+    margin-top: 40px;
+    width: 180px;
+    height: 60px;
+    border: 20px;
+    font-family: 'fz', sans-serif;
+    background-color: #591A15;
+    color: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+    button:hover {
+        background-color: #591A15;
+        opacity: 1;
+    }

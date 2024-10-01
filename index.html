@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑花飞行棋</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        #playButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #591A15;
+            color: #F5F5DC;
+            border: none;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="music.html" style="display:none;" id="musicFrame"></iframe>
+    <div class="login-container">
+        <h1 style="font-size: 80px; color: #333333;">
+            【解雨臣生日特别版】
+        </h1>
+        <p style="font-size: 40px; color: #333333;">请输入黑眼镜的生日作为通行证</p>
+
+        <form id="loginForm">
+            <input type="password" id="password" style="font-size: 20px; color:#591A15;" placeholder="4位数字密码" required>
+            <button type="submit" style="font-size: 20px; background-color: #591A15; color: #F5F5DC">登录</button>
+            <div id="error-message" style="font-size: 15px; color: #FBEBD1;"></div>
+        </form>
+    </div>
+    <script>
+        function playMusic() {
+            var iframe = document.getElementById('musicFrame');
+            var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+            var audio = innerDoc.getElementById('backgroundMusic');
+            audio.play().then(function () {
+                sessionStorage.setItem('isPlaying', 'true');
+            }).catch(function (error) {
+                console.log('Autoplay was prevented:', error);
+            });
+        }
+    </script>
+    <script src="login.js"></script>
+</body>
+</html>
+

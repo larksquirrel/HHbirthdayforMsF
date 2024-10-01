@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑花飞行棋</title>
+    <script src="game.js"></script>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="board" class="board">
+            <!-- 55个格子 -->
+            <div class="cell" data-type="task" data-text="游戏开始！" data-index="1">起点</div>
+            <div class="cell" data-type="task" data-text="亲吻15秒" data-index="2">wir</div>
+            <div class="cell" data-type="move" data-text="+1" data-index="3">+1</div>
+            <div class="cell" data-type="task" data-text="给对方扎头发" data-index="4">er</div>
+            <div class="cell" data-type="task" data-text="用3种不同方式拥抱" data-index="5">wir</div>
+            <div class="cell" data-type="move" data-text="+3" data-index="6">+3</div>
+            <div class="cell" data-type="task" data-text="对视30秒" data-index="7">wir</div>
+            <div class="cell" data-type="move" data-text="-3" data-index="8">-3</div>
+            <div class="cell" data-type="task" data-text="公主抱对方完成10个深蹲" data-index="9">er</div>
+            <div class="cell" data-type="task" data-text="亲吻对方脖子" data-index="10">er</div>
+            <div class="cell" data-type="move" data-text="+2" data-index="11">+2</div>
+            <div class="cell" data-type="task" data-text="指定对方抚摸自己的特定身体部位" data-index="12">er</div>
+            <div class="cell" data-type="task" data-text="抚摸对方的特定身体部位" data-index="13">er</div>
+            <div class="cell" data-type="task" data-text="亲吻对方额头" data-index="14">er</div>
+            <div class="cell" data-type="move" data-text="-1" data-index="15">-1</div>
+            <div class="cell" data-type="task" data-text="牵手三个回合" data-index="16">wir</div>
+            <div class="cell" data-type="task" data-text="叫一天对方喜欢的称呼" data-index="17">er</div>
+            <div class="cell" data-type="move" data-text="-4" data-index="18">-4</div>
+            <div class="cell" data-type="task" data-text="给对方做早餐" data-index="19">er</div>
+            <div class="cell" data-type="task" data-text="喂对方喝水（不限制种类）" data-index="20">er</div>
+            <div class="cell" data-type="task" data-text="唱对方喜欢的歌" data-index="21">er</div>
+            <div class="cell" data-type="move" data-text="+4" data-index="22">+4</div>
+            <div class="cell" data-type="move" data-text="+5" data-index="23">23</div>
+            <div class="cell" data-type="task" data-text="控制对方一天的饮食" data-index="24">er</div>
+            <div class="cell" data-type="move" data-text="-4" data-index="25">-4</div>
+            <div class="cell" data-type="task" data-text="给对方涂口红" data-index="26">er</div>
+            <div class="cell" data-type="task" data-text="给对方转账任意金额" data-index="27">er</div>
+            <div class="cell" data-type="task" data-text="指定对方脱两件衣服" data-index="28">er</div>
+            <div class="cell" data-type="move" data-text="+2" data-index="29">+2</div>
+            <div class="cell" data-type="task" data-text="让对方在自己的任意部位种草莓" data-index="30">ich</div>
+            <div class="cell" data-type="task" data-text="给对方当一天的司机" data-index="31">er</div>
+            <div class="cell" data-type="move" data-text="-6" data-index="32">-6</div>
+            <div class="cell" data-type="task" data-text="给对方一张简笔画" data-index="33">er</div>
+            <div class="cell" data-type="task" data-text="觉得对方像哪种小动物" data-index="34">er</div>
+            <div class="cell" data-type="task" data-text="指定对方穿两件衣服/饰品" data-index="35">er</div>
+            <div class="cell" data-type="task" data-text="坐对方大腿三个回合" data-index="36">er</div>
+            <div class="cell" data-type="move" data-text="+3" data-index="37">+3</div>
+            <div class="cell" data-type="task" data-text="被对方捏脸" data-index="38">ich</div>
+            <div class="cell" data-type="task" data-text="一起吃一根pocky" data-index="39">wir</div>
+            <div class="cell" data-type="task" data-text="说出最喜欢对方叫自己的称呼" data-index="40">ich</div>
+            <div class="cell" data-type="task" data-text="壁咚对方30秒" data-index="41">er</div>
+            <div class="cell" data-type="move" data-text="-2" data-index="42">-2</div>
+            <div class="cell" data-type="task" data-text="用对方手机自拍一张" data-index="43">er</div>
+            <div class="cell" data-type="task" data-text="说出今天的心动时刻" data-index="44">er</div>
+            <div class="cell" data-type="move" data-text="-4" data-index="45">-4</div>
+            <div class="cell" data-type="task" data-text="发一条由对方指定的朋友圈" data-index="46">ich</div>
+            <div class="cell" data-type="task" data-text="给对方录一条起床铃" data-index="47">ich</div>
+            <div class="cell" data-type="move" data-text="+6" data-index="48">+6</div>
+            <div class="cell" data-type="task" data-text="蒙眼猜对方给的糖果口味" data-index="49">ich</div>
+            <div class="cell" data-type="task" data-text="拍三张合照" data-index="50">wir</div>
+            <div class="cell" data-type="task" data-text="模仿一种动物" data-index="51">ich</div>
+            <div class="cell" data-type="task" data-text="鼻子贴鼻子30秒" data-index="52">wir</div>
+            <div class="cell" data-type="move" data-text="+2" data-index="53">+2</div>
+            <div class="cell" data-type="task" data-text="摸对方的头" data-index="54">er</div>
+            <div class="cell" data-type="task" data-text="游戏结束！可指定对方完成任意任务" data-index="55">终点</div>
+        </div>
+
+        <div class="player-info">
+            <div class="player">
+                <h2>黑</h2>
+                <div id="player1-avatar" class="avatar" style="background-image: url('111.png');"></div>
+            </div>
+            <div class="player">
+                <h2>花</h2>
+                <div id="player2-avatar" class="avatar" style="background-image: url('222.png');"></div>
+
+            </div>
+        </div>
+        <div class="controls">
+            <button id="roll-dice">掷骰子</button>
+            <p id="dice-result">掷骰子点数: -</p>
+        </div>
+        <div class="current-text">
+            <p style="position: absolute; top: 300px; left: 800px;" id="currentElement">移动点数：</p>
+            <p style="position: absolute; top: 400px; left: 800px;" id="nextElement">当前任务：</p>
+        </div>
+
+    </div>
+</body>
+</html>
+

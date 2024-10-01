@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+</head>
+<body>
+    <audio id="backgroundMusic" src="flowerday.mp3" loop="loop"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var audio = document.getElementById('backgroundMusic');
+            var isPlaying = sessionStorage.getItem('isPlaying');
+            if (isPlaying === 'true') {
+                audio.play().catch(function (error) {
+                    console.log('Autoplay was prevented:', error);
+                });
+            }
+            audio.addEventListener('timeupdate', function () {
+                sessionStorage.setItem('musicCurrentTime', audio.currentTime);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
